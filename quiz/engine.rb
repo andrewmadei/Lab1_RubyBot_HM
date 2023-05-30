@@ -119,7 +119,7 @@ module QuizHM
               return
             end
           end
-          send_question(question, message, index_question_collection)
+          send_question(question, message, index_question_collection + 1)
           last_question = question
         end
       end
@@ -138,7 +138,7 @@ module QuizHM
 
     def send_question(question, message, index_question_collection)
       # функція для відправки запитанняз кнопками
-      question_text = index_question_collection.to_s + "."  + question.question_body
+      question_text = index_question_collection.to_s + ". "  + question.question_body
       question_correct_answer = question.question_correct_answer
       question_answers = question.question_answers
       text_answers = []
